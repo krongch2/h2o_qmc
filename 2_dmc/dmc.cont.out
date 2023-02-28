@@ -34,22 +34,22 @@
 =================================================
 --- Memory usage report : when QMCPACK starts ---
 =================================================
-Available memory on node 0, free + buffers :  159796 MiB
-Memory footprint by rank 0 on node 0       :     171 MiB
+Available memory on node 0, free + buffers :  147451 MiB
+Memory footprint by rank 0 on node 0       :     172 MiB
 =================================================
 
   Input XML = H2O.s002.cont.xml
 
   Project = H2O
-  date    = 2023-02-28 12:21:42 EST
-  host    = b24n11
+  date    = 2023-02-28 12:44:57 EST
+  host    = b19n10
 
 
  Random Number
  -------------
-  Offset for the random number seeds based on time: 38
+  Offset for the random number seeds based on time: 409
 
-  Range of prime numbers to use as seeds over processors and threads = 173-421
+  Range of prime numbers to use as seeds over processors and threads = 2833-3203
 
 
  Particle Set
@@ -468,7 +468,7 @@ QMCHamiltonian::addOperatorType added type coulomb named IonIon
 </init>
 ParticleSetPool::randomize 0 ParticleSets.
   Restart from the random number streams from the previous configuration.
-  Initialization Execution time = 0.5758 secs
+  Initialization Execution time = 0.3605 secs
 =========================================================
  Summary of QMC systems 
 =========================================================
@@ -476,14 +476,14 @@ ParticleSetPool has:
 
   ParticleSet 'e' contains 8 particles :  u(4) d(4)
 
-    u  6.6115049157e-01 -2.2723466959e-01  1.8758050877e-01
-    u -1.9082322960e-01 -5.3962893273e-01  4.4309042513e-01
-    u  5.7465816655e-02  5.7652776631e-01  4.3388411981e-01
-    u -4.7845401594e-01 -1.9716350494e+00  1.1583502889e+00
-    d -2.5381903611e-01 -5.9409925171e-01 -3.2644140495e-01
-    d  1.2518230213e-01 -6.6394131996e-01 -2.5971778860e-01
-    d -4.6306910418e-01 -4.8162020519e-01 -2.7847979736e-01
-    d -6.5061757984e-01  1.6183073848e+00  8.5196235921e-01
+    u -5.1072975421e-01  4.1454261400e-01 -3.0207872182e-01
+    u -1.5156835599e-01 -3.1591594830e-01  6.3337679299e-01
+    u  2.1407194551e-01 -5.1650466211e-01 -4.5971529341e-01
+    u  7.7605868509e-02 -8.2458424435e-01  7.2006722950e-01
+    d  6.7829760457e-01 -2.3680341432e-03  2.5268313533e-01
+    d -5.7995877827e-01  3.8495934891e-01  1.9848458387e-01
+    d -2.6021976688e-01 -5.9882962925e-01 -3.1245921797e-01
+    d  9.0832515659e-02  1.9774536152e+00  6.4215781138e-01
 
   Distance table for dissimilar particles (A-B):
     source: ion0  target: e
@@ -539,14 +539,14 @@ Resetting walkers
 =========================================================
 --- Memory usage report : Memory Usage before cloning ---
 =========================================================
-Available memory on node 0, free + buffers :  159727 MiB
-Memory footprint by rank 0 on node 0       :     192 MiB
+Available memory on node 0, free + buffers :  147369 MiB
+Memory footprint by rank 0 on node 0       :     193 MiB
 =========================================================
 ========================================================
 --- Memory usage report : Memory Usage after cloning ---
 ========================================================
-Available memory on node 0, free + buffers :  159727 MiB
-Memory footprint by rank 0 on node 0       :     192 MiB
+Available memory on node 0, free + buffers :  147367 MiB
+Memory footprint by rank 0 on node 0       :     193 MiB
 ========================================================
   Total number of walkers: 4.2000000000e+01
   Total weight: 4.2000000000e+01
@@ -579,8 +579,8 @@ Using DMCUpdatePbyPWithRejectionFast
 ========================================================================
 --- Memory usage report : Memory Usage after the buffer registration ---
 ========================================================================
-Available memory on node 0, free + buffers :  159708 MiB
-Memory footprint by rank 0 on node 0       :     197 MiB
+Available memory on node 0, free + buffers :  147329 MiB
+Memory footprint by rank 0 on node 0       :     198 MiB
 ========================================================================
 SimpleFixedNodeBranch::checkParameters 
   Average Energy of a population  = nan
@@ -592,22 +592,22 @@ SimpleFixedNodeBranch::checkParameters
   Steps per block = 10
   Number of blocks = 200
 
-  DMC Engine Initialization = 1.2054896355e-01 secs
+  DMC Engine Initialization = 3.5885405540e-01 secs
 WARNING The number of walkers is running lower than Min Walkers per MPI rank : 90. Floor is applied
 WARNING WalkerControlBase::applyNmaxNmin not able to add sufficient walkers overall!
 
 ------------------------------------------------------------
 Sender: LSF System <lsfadmin@batch1>
-Subject: Job 2749953: <dmc.cont> in cluster <summit> Exited
+Subject: Job 2749987: <dmc.cont> in cluster <summit> Exited
 
-Job <dmc.cont> was submitted from host <login5> by user <krongch2> in cluster <summit> at Tue Feb 28 12:20:29 2023
-Job was executed on host(s) <1*batch1>, in queue <batch>, as user <krongch2> in cluster <summit> at Tue Feb 28 12:21:12 2023
-                            <42*b24n11>
+Job <dmc.cont> was submitted from host <login5> by user <krongch2> in cluster <summit> at Tue Feb 28 12:43:26 2023
+Job was executed on host(s) <1*batch1>, in queue <batch>, as user <krongch2> in cluster <summit> at Tue Feb 28 12:44:25 2023
+                            <42*b19n10>
 </ccs/home/krongch2> was used as the home directory.
-</gpfs/alpine/mat221/proj-shared/test_H2O> was used as the working directory.
-Started at Tue Feb 28 12:21:12 2023
-Terminated at Tue Feb 28 12:21:44 2023
-Results reported at Tue Feb 28 12:21:44 2023
+</gpfs/alpine/mat221/proj-shared/h2o_qmc/2_dmc> was used as the working directory.
+Started at Tue Feb 28 12:44:25 2023
+Terminated at Tue Feb 28 12:45:00 2023
+Results reported at Tue Feb 28 12:45:00 2023
 
 The output (if any) is above this job summary.
 
