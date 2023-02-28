@@ -1,0 +1,20 @@
+#!/bin/bash
+#BSUB -P mat221
+#BSUB -J dmc.cont
+#BSUB -o dmc.cont.out
+#BSUB -e dmc.cont.err
+#BSUB -W 00:20
+#BSUB -nnodes 1
+#BSUB -alloc_flags "smt1"
+
+module load gcc/9.3.0 spectrum-mpi cuda essl netlib-lapack hdf5/1.10.7 fftw; module use /gpfs/alpine/mat151/world-shared/opt/modules; module load llvm/release-15.0.0-cuda11.0
+
+NNODES=$(((LSB_DJOB_NUMPROC-1)/42))
+RANKS_PER_NODE=6
+RS_PER_NODE=6
+exe_path=/gpfs/alpine/mat151/world-shared/opt/qmcpack/release-3.16.0/build_summit_Clang_offload_cuda_real/bin
+
+export OMP_NUM_THREADS=7
+jsrun -n $NNODES -a $RANKS_PER_NODE -c $((RANKS_PER_NODE*OMP_NUM_THREADS)) -g 6 -r 1 -d packed -b packed:$OMP_NUM_THREADS --smpiargs="-disable_gpu_hooks" $exe_path/qmcpack --enable-timers=fine H2O.s002.cont.xml
+
+# jsrun -a 1 -b rs -c 7 -d packed -g 1 -n 6 -r 6 --smpiargs="-disable_gpu_hooks" /gpfs/alpine/mat151/world-shared/opt/qmcpack/release-3.16.0/build_summit_Clang_cpu_cplx/bin/qmcpack_complex H2O.s002.cont.xml
