@@ -60,7 +60,7 @@
     <constant name="IonIon" type="coulomb" source="ion0" target="ion0"/>
   </hamiltonian>
 
- <init source="ion0" target="e"/><mcwalkerset fileroot="H2O.s002" node="-1" nprocs="6" version="3 15" collected="yes"/>
+ <init source="ion0" target="e"/><mcwalkerset fileroot="H2O.s002" version="3 15" collected="yes"/>
 
   <qmc method="dmc" move="pbyp" checkpoint="0" gpu="yes">
     <estimator name="LocalEnergy" hdf5="no"/>
