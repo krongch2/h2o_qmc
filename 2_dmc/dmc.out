@@ -1,7 +1,7 @@
   Input file(s): simple-H2O.xml 
 
 =====================================================
-                    QMCPACK 3.15.0
+                    QMCPACK 3.16.0
 
        (c) Copyright 2003-  QMCPACK developers
 
@@ -10,9 +10,9 @@
       https://doi.org/10.1088/1361-648X/aab9c3
 
   Git branch: HEAD
-  Last git commit: 690350ae148a1345b57e610f240d800384514d69-dirty
-  Last git commit date: Wed Sep 28 18:03:18 2022 -0500
-  Last git commit subject: Merge pull request #4258 from QMCPACK/rc_3150
+  Last git commit: 5b7544c40be105b0aafa1602601ccb0cf23ea547-dirty
+  Last git commit date: Tue Jan 31 09:59:18 2023 -0600
+  Last git commit subject: Merge pull request #4425 from QMCPACK/rc_3160
 =====================================================
   Global options 
 
@@ -29,27 +29,28 @@
   Full precision      = double
 
   CPU only build
+  Complex build. QMC_COMPLEX=ON
   Timer build option is enabled. Current timer level is coarse
 
 =================================================
 --- Memory usage report : when QMCPACK starts ---
 =================================================
-Available memory on node 0, free + buffers :  567859 MiB
-Memory footprint by rank 0 on node 0       :     172 MiB
+Available memory on node 0, free + buffers :  570008 MiB
+Memory footprint by rank 0 on node 0       :     174 MiB
 =================================================
 
   Input XML = simple-H2O.xml
 
   Project = H2O
-  date    = 2023-02-28 12:15:34 EST
-  host    = h09n08
+  date    = 2023-02-28 13:25:24 EST
+  host    = h35n18
 
 
  Random Number
  -------------
-  Offset for the random number seeds based on time: 694
+  Offset for the random number seeds based on time: 788
 
-  Range of prime numbers to use as seeds over processors and threads = 5233-5591
+  Range of prime numbers to use as seeds over processors and threads = 6053-6379
 
 
  Particle Set
@@ -389,13 +390,6 @@ WARNING !!!!!!! Deprecated input style: creating SPO set inside determinantset. 
 
   QMCHamiltonian::addOperator Kinetic to H, physical Hamiltonian 
 
-   Coulomb Potential
-   -----------------
-    Name: ElecElec   Type: AA   PBC: no
-
-  QMCHamiltonian::addOperator ElecElec to H, physical Hamiltonian 
-QMCHamiltonian::addOperatorType added type coulomb named ElecElec
-
    Pseudo Potential
    ----------------
     Name: ELEMENT-ECP   Wavefunction : psi0
@@ -451,7 +445,13 @@ WARNING Nrule was not determined from qmcpack input or pseudopotential file. Set
     Maximum grid on a sphere for NonLocalECPotential: 12
     Using batched ratio computing in NonLocalECP
   QMCHamiltonian::addOperator NonLocalECP to H, physical Hamiltonian 
-QMCHamiltonian::addOperatorType added type pseudo named ELEMENT-ECP
+
+   Coulomb Potential
+   -----------------
+    Name: ElecElec   Type: AA   PBC: no
+
+  QMCHamiltonian::addOperator ElecElec to H, physical Hamiltonian 
+QMCHamiltonian::addOperatorType added type coulomb named ElecElec
 
    Coulomb Potential
    -----------------
@@ -467,7 +467,7 @@ QMCHamiltonian::addOperatorType added type coulomb named IonIon
 <init source="ion0" target="e">
 </init>
 ParticleSetPool::randomize 0 ParticleSets.
-  Initialization Execution time = 0.2957 secs
+  Initialization Execution time = 0.04785 secs
 =========================================================
  Summary of QMC systems 
 =========================================================
@@ -475,14 +475,14 @@ ParticleSetPool has:
 
   ParticleSet 'e' contains 8 particles :  u(4) d(4)
 
-    u -4.4196517154e-01 -5.6934419381e-01 -6.6753209347e-02
-    u -4.2122707153e-01 -3.7525172806e-01 -4.5353710944e-01
-    u  8.5285614479e-02  6.9322380884e-01 -1.9002402388e-01
-    u -5.4592417331e-01 -1.4474958746e+00  1.5828769590e+00
-    d -5.1686861125e-01  4.9428524169e-01  1.1167342289e-01
-    d -6.8679311545e-01 -2.1469273399e-01  7.8512810268e-02
-    d -1.7495904070e-01 -6.1913310503e-01  3.3167084161e-01
-    d  5.7763265561e-01  1.0628873546e+00  1.3421877894e+00
+    u  2.7449421934e-01  4.5421281193e-01 -4.9222521253e-01
+    u -5.2621686684e-01 -1.8501913773e-01  4.6130872803e-01
+    u  5.4461541436e-01  3.9559909262e-01 -2.6615300710e-01
+    u  4.3694272565e-01 -1.8806598076e+00  1.4693560979e+00
+    d  1.5834308763e-01  2.1822655692e-01 -6.7174894960e-01
+    d  2.7275550421e-02  3.7727960287e-02  7.2233971246e-01
+    d  7.1492647451e-02 -3.0326162494e-01  6.5334768924e-01
+    d  6.9000035740e-01  1.4392621149e+00  8.8930649813e-01
 
   Distance table for dissimilar particles (A-B):
     source: ion0  target: e
@@ -509,10 +509,10 @@ ParticleSetPool has:
 
   Hamiltonian h0
   Kinetic         Kinetic energy
-  ElecElec        CoulombAB source=e
-
   LocalECP        LocalECPotential: ion0
   NonLocalECP     NonLocalECPotential: ion0
+  ElecElec        CoulombAB source=e
+
   IonIon          CoulombAA source/target ion0
 
 
@@ -576,14 +576,14 @@ Resetting walkers
 =========================================================
 --- Memory usage report : Memory Usage before cloning ---
 =========================================================
-Available memory on node 0, free + buffers :  567811 MiB
-Memory footprint by rank 0 on node 0       :     181 MiB
+Available memory on node 0, free + buffers :  569969 MiB
+Memory footprint by rank 0 on node 0       :     180 MiB
 =========================================================
 ========================================================
 --- Memory usage report : Memory Usage after cloning ---
 ========================================================
-Available memory on node 0, free + buffers :  567803 MiB
-Memory footprint by rank 0 on node 0       :     181 MiB
+Available memory on node 0, free + buffers :  569968 MiB
+Memory footprint by rank 0 on node 0       :     180 MiB
 ========================================================
   Initial partition of walkers 0 1 2 3 4 5 6 7 
 
@@ -595,8 +595,8 @@ Memory footprint by rank 0 on node 0       :     181 MiB
 ========================================================================
 --- Memory usage report : Memory Usage after the buffer registration ---
 ========================================================================
-Available memory on node 0, free + buffers :  567795 MiB
-Memory footprint by rank 0 on node 0       :     181 MiB
+Available memory on node 0, free + buffers :  569960 MiB
+Memory footprint by rank 0 on node 0       :     180 MiB
 ========================================================================
   Anonymous Buffer size per walker : 20768 Bytes.
 MEMORY increase 0 MB VMC::resetRun
@@ -604,17 +604,17 @@ MEMORY increase 0 MB VMC::resetRun
   SimpleFixedNodeBranch::finalize after a VMC block
     QMC counter        = 0
     time step          = 0.3
-    reference energy   = -17.2427
-    reference variance = 0.225457
+    reference energy   = -17.2362
+    reference variance = 0.583155
 ====================================================
-  QMC Execution time = 4.5293e-01 secs
+  QMC Execution time = 2.0673e-01 secs
 BRANCH resetRun
  SimpleFixedNodeBranch::resetRun detected changes in <parameter>'s 
  BranchMode : 0000001100 0000001100
  iParam (old):                100                 1                 0              2688                42                42                 1                 0
  iParam (new):                100                 1                 0              2688                42                42                 1                 0
- vParam (old):   3.0000000000e-01  3.0000000000e-01 -1.7242686691e+01 -1.7242686691e+01  1.0000000000e+00  1.0000000000e+00  1.0000000000e+00  1.0000000000e+00  2.2545655036e-01 -1.7242686691e+01  1.0000000000e+00  1.0000000000e+00  1.0000000000e+01  1.0000000000e+00  1.0000000000e+00  1.0000000000e+00  1.0000000000e+00
- vParam (new):   5.0000000000e-03  3.0000000000e-01 -1.7242686691e+01 -1.7242686691e+01  1.0000000000e+00  1.0000000000e+00  1.0000000000e+00  1.0000000000e+00  2.2545655036e-01 -1.7242686691e+01  1.0000000000e+00  1.0000000000e+00  1.0000000000e+01  1.0000000000e+00  1.0000000000e+00  1.0000000000e+00  1.0000000000e+00
+ vParam (old):   3.0000000000e-01  3.0000000000e-01 -1.7236223124e+01 -1.7236223124e+01  1.0000000000e+00  1.0000000000e+00  1.0000000000e+00  1.0000000000e+00  5.8315500454e-01 -1.7236223124e+01  1.0000000000e+00  1.0000000000e+00  1.0000000000e+01  1.0000000000e+00  1.0000000000e+00  1.0000000000e+00  1.0000000000e+00
+ vParam (new):   5.0000000000e-03  3.0000000000e-01 -1.7236223124e+01 -1.7236223124e+01  1.0000000000e+00  1.0000000000e+00  1.0000000000e+00  1.0000000000e+00  5.8315500454e-01 -1.7236223124e+01  1.0000000000e+00  1.0000000000e+00  1.0000000000e+01  1.0000000000e+00  1.0000000000e+00  1.0000000000e+00  1.0000000000e+00
 
 =========================================================
   Start DMC
@@ -638,10 +638,10 @@ Using existing walkers
   QMC counter      = 1
   time step        = 5.0000000000e-03
   effective time step = 5.0000000000e-03
-  trial energy     = -1.7242686691e+01
-  reference energy = -1.7242686691e+01
+  trial energy     = -1.7236223124e+01
+  reference energy = -1.7236223124e+01
   Feedback = 1.0000000000e+00
-  reference variance = 2.2545655036e-01
+  reference variance = 5.8315500454e-01
   target walkers = 2688
   branching cutoff scheme classic
   branch cutoff = 5.0000000000e+01 7.5000000000e+01
@@ -655,12 +655,12 @@ Using DMCUpdatePbyPWithRejectionFast
 ========================================================================
 --- Memory usage report : Memory Usage after the buffer registration ---
 ========================================================================
-Available memory on node 0, free + buffers :  567779 MiB
-Memory footprint by rank 0 on node 0       :     195 MiB
+Available memory on node 0, free + buffers :  569938 MiB
+Memory footprint by rank 0 on node 0       :     196 MiB
 ========================================================================
 SimpleFixedNodeBranch::checkParameters 
-  Average Energy of a population  = -17.2427
-  Energy Variance = 0.225457
+  Average Energy of a population  = -17.2362
+  Energy Variance = 0.583155
 
   Fluctuating population
   Persistent walkers are killed after 1 MC sweeps
@@ -668,32 +668,32 @@ SimpleFixedNodeBranch::checkParameters
   Steps per block = 10
   Number of blocks = 200
 
-  DMC Engine Initialization = 2.1839857101e-02 secs
+  DMC Engine Initialization = 2.1125426000e-02 secs
 
  Warmup is completed after 100
 
-  TauEff     = 4.9774379216e-03
- TauEff/Tau = 9.9548758431e-01
-  Etrial     = -1.7329483966e+01
- Running average of energy = -1.7255916658e+01
-                  Variance = 2.3704831533e-01
+  TauEff     = 4.9778569534e-03
+ TauEff/Tau = 9.9557139067e-01
+  Etrial     = -1.7410691019e+01
+ Running average of energy = -1.7255476013e+01
+                  Variance = 2.5057813832e-01
 branch cutoff = 1.0000000000e+01 1.5000000000e+01
 ====================================================
   SimpleFixedNodeBranch::finalize after a DMC block
     QMC counter                   = 1
     time step                     = 0.005
-    effective time step           = 0.00497785
-    trial energy                  = -17.2629
-    reference energy              = -17.2603
-    reference variance            = 0.237048
+    effective time step           = 0.00497794
+    trial energy                  = -17.2658
+    reference energy              = -17.2606
+    reference variance            = 0.250578
     target walkers                = 2688
     branch cutoff                 = 10 15
     Max and minimum walkers per node= 897 90
     Feedback                      = 1
     QMC Status (BranchMode)       = 0000001111
 ====================================================
-  QMC Execution time = 5.6473e+01 secs
-  Total Execution time = 5.6933e+01 secs
+  QMC Execution time = 5.5973e+01 secs
+  Total Execution time = 5.6210e+01 secs
 
 =========================================================
   A new xml input file : H2O.s002.cont.xml
@@ -701,25 +701,25 @@ branch cutoff = 1.0000000000e+01 1.5000000000e+01
 Use --enable-timers=<value> command line option to increase or decrease level of timing information
 Stack timer profile
 Timer      Inclusive_time  Exclusive_time  Calls       Time_per_call
-Total        57.2289     0.0001              1      57.228924036
-  DMC        56.4740    56.4740              1      56.473959923
-  Startup     0.2960     0.2960              1       0.295951843
-  VMC         0.4589     0.4589              1       0.458899975
+Total        56.2582     0.0001              1      56.258181341
+  DMC        55.9741    55.9741              1      55.974086432
+  Startup     0.0479     0.0479              1       0.047947331
+  VMC         0.2360     0.2360              1       0.236040441
 
 QMCPACK execution completed successfully
 
 ------------------------------------------------------------
 Sender: LSF System <lsfadmin@batch4>
-Subject: Job 2749917: <dmc> in cluster <summit> Done
+Subject: Job 2750092: <dmc> in cluster <summit> Done
 
-Job <dmc> was submitted from host <login5> by user <krongch2> in cluster <summit> at Tue Feb 28 12:14:25 2023
-Job was executed on host(s) <1*batch4>, in queue <batch>, as user <krongch2> in cluster <summit> at Tue Feb 28 12:15:01 2023
-                            <42*h09n08>
+Job <dmc> was submitted from host <login5> by user <krongch2> in cluster <summit> at Tue Feb 28 13:23:43 2023
+Job was executed on host(s) <1*batch4>, in queue <batch>, as user <krongch2> in cluster <summit> at Tue Feb 28 13:24:52 2023
+                            <42*h35n18>
 </ccs/home/krongch2> was used as the home directory.
-</gpfs/alpine/mat221/proj-shared/test_H2O> was used as the working directory.
-Started at Tue Feb 28 12:15:01 2023
-Terminated at Tue Feb 28 12:16:33 2023
-Results reported at Tue Feb 28 12:16:33 2023
+</gpfs/alpine/mat221/proj-shared/h2o_qmc/1_vmc_dmc> was used as the working directory.
+Started at Tue Feb 28 13:24:52 2023
+Terminated at Tue Feb 28 13:26:22 2023
+Results reported at Tue Feb 28 13:26:22 2023
 
 The output (if any) is above this job summary.
 

@@ -4,7 +4,7 @@
     <application name="qmcapp" role="molecu" class="serial" version="0.2">
       Simple Example of moleculear H2O
     </application>
-  <host>h09n08</host><date>Tue Feb 28 12:15:34 2023
+  <host>h35n18</host><date>Tue Feb 28 13:25:24 2023
 </date></project>
 
   <particleset name="e">
@@ -60,9 +60,9 @@
     <constant name="IonIon" type="coulomb" source="ion0" target="ion0"/>
   </hamiltonian>
 
- <init source="ion0" target="e"/><mcwalkerset fileroot="H2O.s002" node="-1" nprocs="6" version="3 15" collected="yes"/>
+ <init source="ion0" target="e"/><mcwalkerset fileroot="H2O.s002" node="-1" nprocs="6" version="3 16" collected="yes"/>
 
-  <!-- <qmc method="vmc" move="pbyp" gpu="yes">
+  <qmc method="vmc" move="pbyp" gpu="yes">
     <estimator name="LocalEnergy" hdf5="no"/>
     <parameter name="walkers">    1 </parameter>
     <parameter name="samplesperthread">      64 </parameter>
@@ -72,7 +72,7 @@
     <parameter name="blocks">  1 </parameter>
     <parameter name="timestep">  0.3 </parameter>
     <parameter name="usedrift">   no </parameter>
-  </qmc> -->
+  </qmc>
   <qmc method="dmc" move="pbyp" checkpoint="0" gpu="yes">
     <estimator name="LocalEnergy" hdf5="no"/>
     <parameter name="minimumtargetwalkers"> 128 </parameter>

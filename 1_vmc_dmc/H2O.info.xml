@@ -12,26 +12,26 @@
     <max_timers_exceeded>no</max_timers_exceeded>
     <timer>
       <name>Total</name>
-      <time_incl>57.2289</time_incl>
-      <time_excl>0.000112295</time_excl>
+      <time_incl>56.2582</time_incl>
+      <time_excl>0.000107137</time_excl>
       <calls>1</calls>
       <includes>
         <timer>
           <name>DMC</name>
-          <time_incl>56.474</time_incl>
-          <time_excl>56.474</time_excl>
+          <time_incl>55.9741</time_incl>
+          <time_excl>55.9741</time_excl>
           <calls>1</calls>
         </timer>
         <timer>
           <name>Startup</name>
-          <time_incl>0.295952</time_incl>
-          <time_excl>0.295952</time_excl>
+          <time_incl>0.0479473</time_incl>
+          <time_excl>0.0479473</time_excl>
           <calls>1</calls>
         </timer>
         <timer>
           <name>VMC</name>
-          <time_incl>0.4589</time_incl>
-          <time_excl>0.4589</time_excl>
+          <time_incl>0.23604</time_incl>
+          <time_excl>0.23604</time_excl>
           <calls>1</calls>
         </timer>
       </includes>
